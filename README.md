@@ -1,24 +1,77 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| nickname | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :tweets
+- has_many :keep_it_ups
+- has_many :comments
 
-* Configuration
+## tweets テーブル
 
-* Database creation
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| text   | string     | null: false                    |
+| user   | references | null: false, foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- has_one_attached : image
+- belongs_to :user
+- has_many :keep_it_ups
+- has_many :comments
+- has_many :tags, through: :tweet_tags
 
-* Services (job queues, cache servers, search engines, etc.)
+## keep_it_ups テーブル
 
-* Deployment instructions
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| tweet  | references | null: false, foreign_key: true |
 
-* ...
+### Association
+
+- belongs_to :user
+- belongs_to :tweet
+
+## comments テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| message | string     | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| tweet   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :tweet
+
+## tweet_tags テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| tweet  | references | null: false, foreign_key: true |
+| tag    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :tweet
+- belongs_to :tag
+
+## tags テーブル
+
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| text   | string | null: false |
+
+### Association
+
+- has_many :tweets, through: :tweet_tags
