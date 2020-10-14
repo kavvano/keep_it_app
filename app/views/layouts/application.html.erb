@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>KeepItApp</title>
+    <title>Keep It App</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,6 +12,29 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <header>
+      <h1>
+        <%= link_to root_path do %>
+          <div>
+            <%= image_tag "logo_white.png" %>
+            Keep It App
+          </div>
+        <% end %>
+      </h1>
+      <div class="user">
+        <% if user_signed_in? %>
+          <ul>
+            <li><%= current_user.nickname %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        <% else %>
+          <ul>
+            <li><%= link_to "ログイン", new_user_session_path %></li>
+            <li><%= link_to "新規登録", new_user_registration_path %></li>
+          </ul>
+        <% end %>
+    </header>
     <%= yield %>
+    <footer>©︎ Keep It App 2020</footer>
   </body>
 </html>
