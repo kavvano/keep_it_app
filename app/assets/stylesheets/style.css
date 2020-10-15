@@ -1,0 +1,117 @@
+/* layouts/application.html.erb */
+header {
+  width: 100%;
+}
+
+h1 {
+  background-color: orange;
+  text-align: center;
+}
+
+h1 div {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 img {
+  height: 1.25em;
+  margin-right: 0.25em;
+}
+
+h1 a {
+  color: white;
+  font-size: 2em;
+  line-height: 2;
+  text-decoration: none;
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+}
+
+div.user ul {
+  display: flex;
+}
+
+div.user li {
+  color: orange;
+  font-weight: bold;
+  list-style: none;
+  border: solid 0.15em orange;
+  border-radius: 0.25em;
+  box-shadow: 0 0 5px 0 #cccccc;
+  margin: 1em 0.5em 0;
+  padding: 0.5em 1em;
+}
+
+div.user a {
+  color: orange;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+}
+
+footer {
+  background-color: orange;
+  color: white;
+  text-align: center;
+  line-height: 2;
+}
+
+/* devise/registrations/new.html.erb */
+.user_form {
+  border: solid 0.15em #cccccc;
+  border-radius: 0.25em;
+  box-shadow: 0 0 10px 0 #cccccc;
+  margin: 1em 10%;
+  padding: 0.5em 1em;
+  text-align: center;
+  line-height: 2;
+}
+
+h2 {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.new_user {
+  margin: 0.5em 0;
+}
+
+.field {
+  margin-bottom: 0.5em;
+}
+
+.field_with_errors {
+  display: contents;
+}
+
+div.field input {
+  height: 2em;
+  width: 20em;
+  border: solid 0.15em #999999;
+  border-radius: 0.25em;
+}
+
+div.actions input {
+  border: solid 0.15em #999999;
+  border-radius: 0.25em;
+}
+
+input#user_remember_me {
+  width: 1.25em;
+}
+
+/* devise/shared/_error_messages.html.erb */
+div#error_explanation h2 {
+  font-size: 1em;
+}
+
+div#error_explanation li {
+  font-size: 1em;
+  color: red;
+  list-style: none;
+}

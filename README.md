@@ -23,7 +23,7 @@
 
 ### Association
 
-- has_one_attached : image
+- has_one_attached :image
 - belongs_to :user
 - has_many :keep_it_ups
 - has_many :comments
