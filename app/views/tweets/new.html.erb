@@ -1,0 +1,16 @@
+<div class="form">
+  <h2>積み上げ投稿フォーム</h2>
+
+  <%= form_with model: @tweet do |f| %>
+    <div class="tweet">
+      <%= f.text_area :text %>
+      <%= f.label :image do %>
+        <%= image_tag "image.png", class: "tweet_image" %>
+      <% end %>
+      <%= f.file_field :image %>
+      <div class="actions">
+        <%= f.submit "投稿する" %>
+      </div>
+    </div>
+  <% end %>
+</div>
