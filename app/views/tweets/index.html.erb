@@ -1,1 +1,20 @@
-tweets index
+<% if user_signed_in? %>
+  <%= link_to new_tweet_path do %>
+  <div class="tweet_new">
+    <div>
+      <%= image_tag "tweet_orange.png" %>
+    </div>
+    <p>投稿する</p>
+  </div>
+  <% end %>
+<% end %>
+<div class="tweet_lists">
+  <h2>積み上げ</h2>
+  <% @tweets.each do |tweet| %>
+    <div class="tweet_list">
+      <p><b><%= tweet.user.nickname %></b></p>
+      <p><%= tweet.text %></p>
+      <%= image_tag tweet.image.variant(resize: "400x400") if tweet.image.attached? %>
+    </div>
+  <% end %>
+</div>
