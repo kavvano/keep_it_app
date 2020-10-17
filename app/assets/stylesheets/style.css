@@ -156,16 +156,28 @@ div.tweet_new p {
   background-color: rgba(204, 204, 204, 0.1);
   border-radius: 0.25em;
   margin: 1em 10%;
-  padding: 1em;
+  padding: 1em 0;
 }
 
 .tweet_list {
   width: 100%;
-  background-color: pink;
-  height: 20em;
+  border-top: solid 1px #cccccc;
   margin-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+div.tweet_list p {
+  width: 15em;
+  margin: 0.25em 0;
+}
+
+div.tweet_list img {
+  border-radius: 0.25em;
+}
+
+/* tweets/new.html.erb */
 .tweet {
   display: flex;
   flex-direction: column;

@@ -12,7 +12,9 @@
   <h2>積み上げ</h2>
   <% @tweets.each do |tweet| %>
     <div class="tweet_list">
-      
+      <p><b><%= tweet.user.nickname %></b></p>
+      <p><%= tweet.text %></p>
+      <%= image_tag tweet.image.variant(resize: "400x400") if tweet.image.attached? %>
     </div>
   <% end %>
 </div>
