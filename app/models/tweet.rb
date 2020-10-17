@@ -6,6 +6,7 @@ class Tweet < ApplicationRecord
   has_many :tags, through: :tweet_tags
 
   with_options presence: true do
-    validates :user, :text
+    validates :user
+    validates :text, length: { maximum: 255 }
   end
 end
