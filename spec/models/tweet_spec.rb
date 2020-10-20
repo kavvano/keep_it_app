@@ -22,6 +22,11 @@ RSpec.describe Tweet, type: :model do
         @tweet.valid?
         expect(@tweet.errors.full_messages).to include("Textを入力してください")
       end
+      it 'textが256文字以上では投稿できない' do
+        @tweet.text = Faker::Lorem.characters(number: 256)
+        @tweet.valid?
+        expect(@tweet.errors.full_messages).to include("Textは255文字以内で入力してください")
+      end
       it 'ユーザーが紐づいていないと投稿できない' do
         @tweet.user = nil
         @tweet.valid?
