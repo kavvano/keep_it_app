@@ -11,9 +11,11 @@ RSpec.describe User, type: :model do
         expect(@user).to be_valid
       end
       it 'nicknameが12文字以下であれば登録できる' do
+        @user.nickname = "abcdef123456"
         expect(@user).to be_valid
       end
       it 'passwordが8文字以上の半角英数字であれば登録できる' do
+        @user.password = "abcd1234"
         expect(@user).to be_valid
       end
     end
