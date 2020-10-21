@@ -169,7 +169,8 @@ div.tweet_new p {
 }
 
 div.tweet_list p {
-  width: 15em;
+  line-height: 1.25;
+  width: 20em;
   margin: 0.25em 0;
 }
 
