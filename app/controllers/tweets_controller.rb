@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.includes(:user).order('created_at desc')
   end
 
   def new
