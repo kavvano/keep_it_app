@@ -6,7 +6,9 @@
   </div>
   <div class="icons">
       <%= image_tag "logo_gray.png" %>
+    <%= link_to edit_tweet_path(@tweet.id) do %>
       <%= image_tag "tweet_gray.png" %>
+    <% end %>
     <%= link_to tweet_path(@tweet.id), method: :delete do %>
       <%= image_tag "garbage_can_gray.png" %>
     <% end %>
