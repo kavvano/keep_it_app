@@ -31,15 +31,16 @@
             <li><%= link_to "新規登録", new_user_registration_path %></li>
           </ul>
         <% end %>
+      </div>
     </header>
     <% if user_signed_in? %>
       <%= link_to new_tweet_path do %>
-      <div class="tweet_new">
-        <div>
-          <%= image_tag "tweet_orange.png" %>
+        <div class="tweet_new">
+          <div>
+            <%= image_tag "tweet_orange.png" %>
+          </div>
+          <p>投稿する</p>
         </div>
-        <p>投稿する</p>
-      </div>
       <% end %>
     <% end %>
     <%= yield %>

@@ -65,6 +65,38 @@ div.user a {
   display: block;
 }
 
+.tweet_new {
+  position: absolute;
+  top: 5em;
+  left: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tweet_new div {
+  background-color: white;
+  border: solid 2px orange;
+  box-shadow: 0 0 10px 0 #999999;
+  border-radius: 50%;
+  height: 3em;
+  width: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.tweet_new img {
+  height: 1.5em;
+}
+
+div.tweet_new p {
+  color: #333333;
+  font-size: 0.75em;
+  font-weight: 600;
+  margin-top: 0.5em;
+}
+
 footer {
   background-color: orange;
   color: white;
@@ -73,14 +105,9 @@ footer {
 }
 
 /* devise/registrations/new.html.erb */
-
 h2 {
   font-size: 1.5em;
   text-align: center;
-}
-
-.new_user {
-  margin: 0.5em 0;
 }
 
 .field {
@@ -120,38 +147,6 @@ div#error_explanation li {
 }
 
 /* tweets/index.html.erb */
-.tweet_new {
-  position: absolute;
-  top: 5em;
-  left: 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.tweet_new div {
-  background-color: white;
-  border: solid 2px orange;
-  box-shadow: 0 0 10px 0 #999999;
-  border-radius: 50%;
-  height: 3em;
-  width: 3em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-div.tweet_new img {
-  height: 1.5em;
-}
-
-div.tweet_new p {
-  color: #333333;
-  font-size: 0.75em;
-  font-weight: 600;
-  margin-top: 0.5em;
-}
-
 .tweet_lists {
   background-color: rgba(204, 204, 204, 0.1);
   border-radius: 0.25em;
@@ -163,6 +158,7 @@ div.tweet_new p {
   text-decoration: none;
 }
 
+/* tweets/_tweet.html.erb */
 .tweet_list {
   width: 100%;
   border-top: solid 1px #cccccc;
@@ -212,7 +208,7 @@ div.tweet label {
   cursor: pointer;
 }
 
-.tweet_image{
+.tweet_image {
   height: 100%;
 }
 
@@ -220,6 +216,7 @@ div.tweet input#tweet_image {
   display: none;
 }
 
+/* tweets/show.html.erb */
 .icons {
   display: flex;
   justify-content: center;
@@ -230,3 +227,5 @@ div.icons img {
   height: 2em;
   padding: 0.5em 2em;
 }
+
+
