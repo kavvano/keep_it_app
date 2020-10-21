@@ -3,3 +3,5 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
+      tweet:
+        text: テキスト
