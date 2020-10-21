@@ -32,6 +32,16 @@
           </ul>
         <% end %>
     </header>
+    <% if user_signed_in? %>
+      <%= link_to new_tweet_path do %>
+      <div class="tweet_new">
+        <div>
+          <%= image_tag "tweet_orange.png" %>
+        </div>
+        <p>投稿する</p>
+      </div>
+      <% end %>
+    <% end %>
     <%= yield %>
     <footer>©︎ Keep It App 2020</footer>
   </body>

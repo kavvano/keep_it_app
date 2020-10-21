@@ -1,0 +1,5 @@
+<div class="tweet_list">
+  <p><b><%= tweet.user.nickname %></b></p>
+  <p><%= tweet.text %></p>
+  <%= image_tag tweet.image.variant(resize: "400x400") if tweet.image.attached? %>
+</div>
