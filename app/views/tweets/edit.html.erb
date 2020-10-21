@@ -1,0 +1,17 @@
+<div class="form">
+  <h2>積み上げ編集フォーム</h2>
+
+  <%= form_with model: @tweet, local: true do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
+    <div class="tweet">
+      <%= f.text_area :text, placeholder: "255文字まで" %>
+      <%= f.label :image do %>
+        <%= image_tag "image.png", class: "tweet_image" %>
+      <% end %>
+      <%= f.file_field :image %>
+      <div class="actions">
+        <%= f.submit "投稿する" %>
+      </div>
+    </div>
+  <% end %>
+</div>
