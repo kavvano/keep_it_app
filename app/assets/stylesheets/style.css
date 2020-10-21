@@ -159,6 +159,10 @@ div.tweet_new p {
   padding: 1em 0;
 }
 
+.tweet_lists a {
+  text-decoration: none;
+}
+
 .tweet_list {
   width: 100%;
   border-top: solid 1px #cccccc;
@@ -214,4 +218,15 @@ div.tweet label {
 
 div.tweet input#tweet_image {
   display: none;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  border-bottom: solid 1px #cccccc;
+}
+
+div.icons img {
+  height: 2em;
+  padding: 0.5em 2em;
 }
