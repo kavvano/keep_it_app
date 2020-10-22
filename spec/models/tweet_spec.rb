@@ -11,7 +11,7 @@ RSpec.describe Tweet, type: :model do
         expect(@tweet).to be_valid
       end
       it 'imageが空でも投稿できる' do
-        @tweet.image = ""
+        @tweet.image = ''
         expect(@tweet).to be_valid
       end
     end
@@ -20,17 +20,17 @@ RSpec.describe Tweet, type: :model do
       it 'textが空では投稿できない' do
         @tweet.text = ''
         @tweet.valid?
-        expect(@tweet.errors.full_messages).to include("Textを入力してください")
+        expect(@tweet.errors.full_messages).to include('Textを入力してください')
       end
       it 'textが256文字以上では投稿できない' do
         @tweet.text = Faker::Lorem.characters(number: 256)
         @tweet.valid?
-        expect(@tweet.errors.full_messages).to include("Textは255文字以内で入力してください")
+        expect(@tweet.errors.full_messages).to include('Textは255文字以内で入力してください')
       end
       it 'ユーザーが紐づいていないと投稿できない' do
         @tweet.user = nil
         @tweet.valid?
-        expect(@tweet.errors.full_messages).to include("Userを入力してください")
+        expect(@tweet.errors.full_messages).to include('Userを入力してください')
       end
     end
   end
