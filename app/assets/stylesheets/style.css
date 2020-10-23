@@ -228,4 +228,25 @@ div.icons img {
   padding: 0.5em 2em;
 }
 
+h3 {
+  font-size: 1em;
+  text-align: center;
+  line-height: 1.5;
+}
 
+.comment_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.comment_form textarea {
+  width: 25em;
+}
+
+.comment_form input {
+  border: solid 0.15em #999999;
+  border-radius: 0.25em;
+  box-shadow: 0 0 2.5px 0 #999999;
+  margin: 0.5em 0;
+}
