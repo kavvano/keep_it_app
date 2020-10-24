@@ -135,6 +135,11 @@ input#user_remember_me {
   width: 1.25em;
 }
 
+/* devise/sessions/new.html.erb */
+form.new_user p {
+  color: red;
+}
+
 /* devise/shared/_error_messages.html.erb */
 div#error_explanation h2 {
   font-size: 1em;
@@ -235,13 +240,19 @@ div.icons img {
 }
 
 h3 {
-  line-height: 1.5;
+  font-size: 1.25em;
+  margin: 0.5em;
 }
 
 .comment_form {
   display: flex;
   flex-direction: column;
   align-items: center
+}
+
+form.comment_form p {
+  color: red;
+  margin-bottom: 0.25em;
 }
 
 .comment_form textarea {
