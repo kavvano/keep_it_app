@@ -276,6 +276,13 @@ form.comment_form p {
   border-bottom: solid 1px #cccccc;
 }
 
-div.comment_list p:nth-child(2n) {
-  text-align: end;
+.comment_user {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+div.comment_user img {
+  height: 1.25em;
+  padding: 0.15em 0.5em 0;
 }
