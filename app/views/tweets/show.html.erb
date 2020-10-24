@@ -13,6 +13,17 @@
       <%= image_tag "garbage_can_gray.png", title: "削除" %>
     <% end %>
   </div>
-  <div class="comment_box">
+  <div class="comment_area">
+    <h3>コメント</h3>
+    <%= form_with model: [@tweet, @comment], class: "comment_form", local: true do |f| %>
+      <p><%= alert %></p>
+      <%= f.text_area :message, placeholder: "255文字まで" %>
+      <%= f.submit "コメントする" %>
+    <% end %>
+    <div class="comment_lists">
+      <% @comments.each do |comment| %>
+        <%= render partial: "comments/comment", locals: { comment: comment } %>
+      <% end %>
+    </div>
   </div>
 </div>

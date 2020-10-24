@@ -135,6 +135,11 @@ input#user_remember_me {
   width: 1.25em;
 }
 
+/* devise/sessions/new.html.erb */
+form.new_user p {
+  color: red;
+}
+
 /* devise/shared/_error_messages.html.erb */
 div#error_explanation h2 {
   font-size: 1em;
@@ -228,4 +233,49 @@ div.icons img {
   padding: 0.5em 2em;
 }
 
+.comment_area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+h3 {
+  font-size: 1.25em;
+  margin: 0.5em;
+}
+
+.comment_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+form.comment_form p {
+  color: red;
+  margin-bottom: 0.25em;
+}
+
+.comment_form textarea {
+  width: 25em;
+}
+
+.comment_form input {
+  border: solid 0.15em #999999;
+  border-radius: 0.25em;
+  box-shadow: 0 0 2.5px 0 #999999;
+  margin: 0.5em 0;
+}
+
+.comment_lists {
+  width: 20em;
+}
+
+/* comments/_comment.html.erb */
+.comment_list {
+  line-height: 1.5;
+  border-bottom: solid 1px #cccccc;
+}
+
+div.comment_list p:nth-child(2n) {
+  text-align: end;
+}
