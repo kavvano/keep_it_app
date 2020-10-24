@@ -5,3 +5,5 @@ ja:
         nickname: ニックネーム
       tweet:
         text: テキスト
+      comment:
+        message: コメント
