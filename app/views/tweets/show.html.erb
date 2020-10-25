@@ -5,12 +5,27 @@
     <%= image_tag @tweet.image.variant(resize: "400x400") if @tweet.image.attached? %>
   </div>
   <div class="icons">
-      <%= image_tag "logo_gray.png" %>
-    <%= link_to edit_tweet_path(@tweet.id) do %>
-      <%= image_tag "tweet_gray.png", title: "編集" %>
-    <% end %>
-    <%= link_to tweet_path(@tweet.id), method: :delete do %>
-      <%= image_tag "garbage_can_gray.png", title: "削除" %>
+    <div class="keep_it_up_button">
+      <% if @keep_it_ups.present? %>
+        <%= @keep_it_ups.count %>
+      <% end %>
+      <% if @keep_it_ups.find_by(user_id: current_user.id).blank? %>
+        <%= link_to tweet_keep_it_ups_path(@tweet), method: :post do %>
+          <%= image_tag "logo_gray.png" %>
+        <% end %>
+      <% else %>
+        <%= link_to tweet_keep_it_up_path(@tweet, @keep_it_ups), method: :delete do %>
+          <%= image_tag "fist_orange.png" %>
+        <% end %>
+      <% end %>
+    </div>
+    <% if @tweet.user.id == current_user.id %>
+      <%= link_to edit_tweet_path(@tweet.id) do %>
+        <%= image_tag "tweet_gray.png", title: "編集" %>
+      <% end %>
+      <%= link_to tweet_path(@tweet.id), method: :delete do %>
+        <%= image_tag "garbage_can_gray.png", title: "削除" %>
+      <% end %>
     <% end %>
   </div>
   <div class="comment_area">
