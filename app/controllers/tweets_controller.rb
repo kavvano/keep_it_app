@@ -22,6 +22,7 @@ class TweetsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user)
+    @keep_it_ups = KeepItUp.where(tweet_id: params[:id])
   end
 
   def edit
