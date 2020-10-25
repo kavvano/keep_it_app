@@ -1,0 +1,2 @@
+class KeepItUp < ApplicationRecord
+end
