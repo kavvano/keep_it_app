@@ -9,17 +9,21 @@
       <% if @keep_it_ups.present? %>
         <%= @keep_it_ups.count %>
       <% end %>
-      <% if @keep_it_ups.find_by(user_id: current_user.id).blank? %>
-        <%= link_to tweet_keep_it_ups_path(@tweet), method: :post do %>
-          <%= image_tag "logo_gray.png" %>
+      <% if user_signed_in? %>
+        <% if @keep_it_ups.find_by(user_id: current_user.id).blank? %>
+          <%= link_to tweet_keep_it_ups_path(@tweet), method: :post do %>
+            <%= image_tag "logo_gray.png" %>
+          <% end %>
+        <% else %>
+          <%= link_to tweet_keep_it_up_path(@tweet, @keep_it_ups), method: :delete do %>
+            <%= image_tag "fist_orange.png" %>
+          <% end %>
         <% end %>
       <% else %>
-        <%= link_to tweet_keep_it_up_path(@tweet, @keep_it_ups), method: :delete do %>
-          <%= image_tag "fist_orange.png" %>
-        <% end %>
+        <%= image_tag "logo_gray.png", style: "margin: 0.5em 0.5em 0.5em 0;" %>
       <% end %>
     </div>
-    <% if @tweet.user.id == current_user.id %>
+    <% if user_signed_in? && current_user.id == @tweet.user.id %>
       <%= link_to edit_tweet_path(@tweet.id) do %>
         <%= image_tag "tweet_gray.png", title: "編集" %>
       <% end %>
