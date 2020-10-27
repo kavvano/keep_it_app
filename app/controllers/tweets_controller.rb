@@ -58,7 +58,7 @@ class TweetsController < ApplicationController
   private
 
   def tweet_tag_params
-    params.require(:tweet_tag_form).permit(:text, :name, :image).merge(user_id: current_user.id,id: params[:id])
+    params.require(:tweet_tag_form).permit(:text, :name, :image).merge(user_id: current_user.id, id: params[:id])
   end
 
   def set_tweet
