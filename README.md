@@ -67,7 +67,7 @@ Eメール：user2@test.com<br>パスワード：user0002
 
 ## ER図
 
-![ER図ver 2](https://user-images.githubusercontent.com/70367011/96565919-f0274d00-12ff-11eb-8deb-375f4a99644a.png)
+![ER図ver 3](https://user-images.githubusercontent.com/70367011/97139190-49c6c600-179d-11eb-86fb-efa4e43e1e56.png)
 
 ## users テーブル
 
@@ -139,7 +139,7 @@ Eメール：user2@test.com<br>パスワード：user0002
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
-| text   | string | null: false |
+| name   | string | null: false |
 
 ### Association
 

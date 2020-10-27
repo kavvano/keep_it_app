@@ -3,7 +3,10 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
-      tweet:
-        text: テキスト
       comment:
         message: コメント
+  activemodel:
+    attributes:
+      tweet_tag_form:
+        text: テキスト
+        name: タグ

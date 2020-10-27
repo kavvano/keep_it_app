@@ -1,16 +1,21 @@
 <div class="form">
   <h2>積み上げ編集フォーム</h2>
 
-  <%= form_with model: @tweet, local: true do |f| %>
+  <%= form_with model: @tweet_tag, url: tweet_path(@tweet.id), method: :patch, local: true do |f| %>
     <%= render 'layouts/error_messages', model: f.object %>
     <div class="tweet">
-      <%= f.text_area :text, placeholder: "255文字まで" %>
+      <%= f.text_area :text, placeholder: "255文字まで", value: @tweet.text, autofocus: true %>
+      <% if @tag.present? %>
+        <%= f.text_area :name, placeholder: "今日の積み上げ", value: @tag.name %>
+      <% else %>
+        <%= f.text_area :name, placeholder: "今日の積み上げ" %>
+      <% end %>
       <%= f.label :image do %>
         <%= image_tag "image.png", class: "tweet_image" %>
       <% end %>
-      <%= f.file_field :image %>
+      <%= f.file_field :image,value: @tweet.image %>
       <div class="actions">
-        <%= f.submit "投稿する" %>
+        <%= f.submit "更新する" %>
       </div>
     </div>
   <% end %>

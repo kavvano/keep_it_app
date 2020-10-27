@@ -217,7 +217,7 @@ div.tweet label {
   height: 100%;
 }
 
-div.tweet input#tweet_image {
+div.tweet input#tweet_tag_form_image {
   display: none;
 }
 
