@@ -1,18 +1,19 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+  before_action :set_tweet, only: [:show, :destroy]
 
   def index
     @tweets = Tweet.includes(:user).order('created_at desc')
   end
 
   def new
-    @tweet = Tweet.new
+    @tweet_tag = TweetTagForm.new
   end
 
   def create
-    @tweet = Tweet.new(tweet_params)
-    if @tweet.save
+    @tweet_tag = TweetTagForm.new(tweet_tag_params)
+    if @tweet_tag.valid?
+      @tweet_tag.save
       redirect_to root_path
     else
       render 'new'
@@ -26,14 +27,24 @@ class TweetsController < ApplicationController
   end
 
   def edit
+    @tweet_tag = TweetTagForm.new
+    @tweet = Tweet.find(params[:id])
+    @tag = @tweet.tags[0]
   end
 
   def update
-    if @tweet.update(tweet_params)
-      redirect_to tweet_path(@tweet.id)
+    @tweet_tag = TweetTagForm.new(tweet_tag_params)
+    if @tweet_tag.valid?
+      @tweet_tag.update
+      redirect_to tweet_path(params[:id])
     else
       render 'edit'
     end
+    # if @tweet_tag.update(tweet_tag_params)
+    #   redirect_to tweet_path(@tweet.id)
+    # else
+    #   render 'edit'
+    # end
   end
 
   def destroy
@@ -46,8 +57,8 @@ class TweetsController < ApplicationController
 
   private
 
-  def tweet_params
-    params.require(:tweet).permit(:text, :image).merge(user_id: current_user.id)
+  def tweet_tag_params
+    params.require(:tweet_tag_form).permit(:text, :name, :image).merge(user_id: current_user.id,id: params[:id])
   end
 
   def set_tweet
