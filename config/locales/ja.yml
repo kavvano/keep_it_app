@@ -10,3 +10,7 @@ ja:
       tweet_tag_form:
         text: テキスト
         name: タグ
+  time:
+    formats:
+      default: "%Y/%m/%d - %H:%M"
+      short: "%m/%d - %H:%M"
