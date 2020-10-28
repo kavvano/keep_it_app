@@ -1,7 +1,11 @@
 <div class="tweet_lists">
+  <%= link_to root_path do %><h2>一覧へ戻る</h2><% end %>
   <div class="tweet_list">
-    <p><b><%= @tweet.user.nickname %></b></p>
+    <div><p><b><%= @tweet.user.nickname %></b></p><p class="creation_time"><%= l @tweet.created_at, format: :short %></p></div>
     <p><%= @tweet.text %></p>
+    <% @tweet.tags.each do |tag| %>
+      <p class="tag">#<%= tag.name %></p>
+    <% end %>
     <%= image_tag @tweet.image.variant(resize: "400x400") if @tweet.image.attached? %>
   </div>
   <div class="icons">
