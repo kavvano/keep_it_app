@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   resources :tweets do
     resources :comments, only: [:create, :destroy]
     resources :keep_it_ups, only: [:create, :destroy]
+    collection do
+      get "search"
+    end
   end
 end
