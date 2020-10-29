@@ -7,6 +7,7 @@
       <%= f.text_area :text, placeholder: "255文字まで", autofocus: true %>
       <p>タグ</p>
       <%= f.text_area :name, placeholder: "今日の積み上げ", class: "input_tag" %>
+      <div class="tag_list"></div>
       <%= f.label :image do %>
         <%= image_tag "image.png", class: "tweet_image" %>
       <% end %>
