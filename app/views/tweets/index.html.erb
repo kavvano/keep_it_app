@@ -1,5 +1,39 @@
+<% unless user_signed_in? %>
+  <p class="landing_title"><span>"Keep it up!"&nbsp;その調子で頑張って！<br></span>と頑張るあなたの背中を押すアプリ</p>
+  <div class="landing">
+    <div>
+      <%= image_tag "frustration.png" %>
+      <p>勉強が難しくて挫折しそう</p>
+    </div>
+    <div>
+      <%= image_tag "muscle_training.png" %>
+      <p>効率を良くトレーニングしたい</p>
+    </div>
+    <div>
+      <%= image_tag "dietary_restrictions.png" %>
+      <p>ダイエット・食事制限がツライ</p>
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <%= image_tag "arrow_black.png", class: "arrow" %>
+  </div>
+  <div class="landing">
+    <div>
+      <%= image_tag "view_sns.png" %>
+      <p>みんなも頑張ってる</p>
+    </div>
+    <div>
+      <%= image_tag "muscular.png" %>
+      <p>効率を良くトレーニングしたい</p>
+    </div>
+    <div>
+      <%= image_tag "low_calorie_diet.png" %>
+      <p>ダイエット・食事制限がツライ</p>
+    </div>
+  </div>
+<% end %>
 <div class="tweet_lists">
-  <h2>積み上げ</h2>
+  <h2>ホーム</h2>
   <% @tweets.each do |tweet| %>
     <%= link_to tweet_path(tweet.id) do %>
       <%= render partial: "tweet", locals: { tweet: tweet } %>

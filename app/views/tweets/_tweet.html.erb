@@ -1,5 +1,8 @@
 <div class="tweet_list">
-  <p><b><%= tweet.user.nickname %></b></p>
+  <div><p><b><%= tweet.user.nickname %></b></p><p class="creation_time"><%= l tweet.created_at %></p></div>
   <p><%= tweet.text %></p>
+  <% tweet.tags.each do |tag| %>
+    <p class="tag">#<%= tag.name %></p>
+  <% end %>
   <%= image_tag tweet.image.variant(resize: "400x400") if tweet.image.attached? %>
 </div>
