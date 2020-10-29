@@ -152,6 +152,44 @@ div#error_explanation li {
 }
 
 /* tweets/index.html.erb */
+.landing_title {
+  color: #333333;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+p.landing_title span {
+  color: orangered;
+}
+
+.landing {
+  margin: 0 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+div.landing div {
+  padding: 1em;
+}
+
+div.landing img {
+  width: 15em;
+}
+
+div.landing p {
+  font-weight: 500;
+  text-align: center;
+}
+
+.arrow {
+  height: 5em;
+}
+
 .tweet_lists {
   background-color: rgba(204, 204, 204, 0.1);
   border-radius: 0.25em;
@@ -173,10 +211,26 @@ div#error_explanation li {
   align-items: center;
 }
 
-div.tweet_list p {
+div.tweet_list div {
   line-height: 1.25;
   width: 20em;
   margin: 0.25em 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.creation_time {
+  font-size: 0.75em;
+}
+
+div.tweet_list > p {
+  line-height: 1.25;
+  width: 20em;
+  margin: 0.25em 0;
+}
+
+.tag {
+  text-align: end;
 }
 
 div.tweet_list img {
