@@ -40,11 +40,6 @@ class TweetsController < ApplicationController
     else
       render 'edit'
     end
-    # if @tweet_tag.update(tweet_tag_params)
-    #   redirect_to tweet_path(@tweet.id)
-    # else
-    #   render 'edit'
-    # end
   end
 
   def destroy
@@ -53,6 +48,12 @@ class TweetsController < ApplicationController
     else
       render 'show'
     end
+  end
+
+  def search
+    return nil if params[:keyword] == ''
+    tag = Tag.where(['name like ?', "%#{params[:keyword]}%"])
+    render json: { keyword: tag }
   end
 
   private
