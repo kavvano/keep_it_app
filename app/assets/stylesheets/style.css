@@ -129,6 +129,7 @@ div.actions input {
   border: solid 0.15em #999999;
   border-radius: 0.25em;
   box-shadow: 0 0 2.5px 0 #999999;
+  cursor: pointer;
 }
 
 input#user_remember_me {
@@ -245,7 +246,7 @@ div.tweet_list img {
   margin: 0.5em 0;
 }
 
-div.tweet textarea {
+div.tweet textarea#tweet_tag_form_text {
   height: 5em;
   width: 30em;
   border: solid 0.1em #999999;
@@ -253,12 +254,40 @@ div.tweet textarea {
   margin-bottom: 0.5em;
 }
 
+.tag_form {
+  width: 25.4em;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+div.tweet textarea#tweet_tag_form_name {
+  height: 2em;
+  width: 26.3em;
+  border: solid 0.1em #999999;
+  border-radius: 0.25em;
+}
+
 div.tweet input#text {
-  margin-bottom: 0.5em;
+  /* margin-bottom: 0.5em; */
   height: 2em;
   width: 20em;
   border: solid 0.15em #999999;
   border-radius: 0.25em;
+}
+
+.tag_lists {
+  width: 100%;
+}
+
+div.tag_lists li {
+  text-align: start;
+  width: auto;
+  font-size: 0.85em;
+  list-style: none;
+  line-height: 1.5;
+  margin:0 0.2em;
+  cursor: pointer;
 }
 
 div.tweet label {

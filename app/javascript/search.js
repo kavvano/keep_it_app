@@ -8,12 +8,13 @@ function tag() {
     XHR.responseType = "json";
     XHR.send();
     XHR.onload = () => {
-      const tagList = document.querySelector(".tag_list");
+      const tagList = document.querySelector(".tag_lists");
       tagList.innerHTML = ""
       if (XHR.response) {
         const tags = XHR.response.keyword;
         tags.forEach((tag) => {
           const list = document.createElement("li");
+          list.setAttribute("class", "tag_list");
           list.setAttribute("id", tag.id);
           list.innerHTML = tag.name;
           tagList.appendChild(list);

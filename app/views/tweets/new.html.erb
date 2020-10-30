@@ -1,13 +1,17 @@
 <div class="form">
-  <h2>積み上げ投稿フォーム</h2>
+  <h2>投稿フォーム</h2>
 
   <%= form_with model: @tweet_tag, url: tweets_path, local: true do |f| %>
     <%= render 'layouts/error_messages', model: f.object %>
     <div class="tweet">
-      <%= f.text_area :text, placeholder: "255文字まで", autofocus: true %>
-      <p>タグ</p>
-      <%= f.text_area :name, placeholder: "今日の積み上げ", class: "input_tag" %>
-      <div class="tag_list"></div>
+      <%= f.text_area :text, placeholder: "例：今日は5kmランニングしました。（255文字まで）", autofocus: true %>
+      <div class="tag_form">
+        <p>タグ：</p>
+        <div>
+          <%= f.text_area :name, placeholder: "例：今日の積み上げ", class: "input_tag" %>
+          <div class="tag_lists"></div>
+        </div>
+      </div>
       <%= f.label :image do %>
         <%= image_tag "image.png", class: "tweet_image" %>
       <% end %>
