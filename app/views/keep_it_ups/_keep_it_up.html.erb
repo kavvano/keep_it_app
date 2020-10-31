@@ -1,0 +1,16 @@
+<% if @tweet.keep_it_ups.present? %>
+  <%= @tweet.keep_it_ups.count %>
+<% end %>
+<% if user_signed_in? %>
+  <% if @keep_it_up.blank? %>
+    <%= link_to tweet_keep_it_ups_path(@tweet), method: :post, remote: true do %>
+      <%= image_tag "logo_gray.png" %>
+    <% end %>
+  <% else %>
+    <%= link_to tweet_keep_it_up_path(@tweet, @keep_it_up), method: :delete, remote: true do %>
+      <%= image_tag "fist_orange.png" %>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= image_tag "logo_gray.png", style: "margin: 0.5em 0.5em 0.5em 0;" %>
+<% end %>
