@@ -10,22 +10,7 @@
   </div>
   <div class="icons">
     <div class="keep_it_up_button">
-      <% if @keep_it_ups.present? %>
-        <%= @keep_it_ups.count %>
-      <% end %>
-      <% if user_signed_in? %>
-        <% if @keep_it_ups.find_by(user_id: current_user.id).blank? %>
-          <%= link_to tweet_keep_it_ups_path(@tweet), method: :post do %>
-            <%= image_tag "logo_gray.png" %>
-          <% end %>
-        <% else %>
-          <%= link_to tweet_keep_it_up_path(@tweet, @keep_it_ups), method: :delete do %>
-            <%= image_tag "fist_orange.png" %>
-          <% end %>
-        <% end %>
-      <% else %>
-        <%= image_tag "logo_gray.png", style: "margin: 0.5em 0.5em 0.5em 0;" %>
-      <% end %>
+      <%= render partial: "keep_it_ups/keep_it_up", locals: { tweet: @tweet }%>
     </div>
     <% if user_signed_in? && current_user.id == @tweet.user.id %>
       <%= link_to edit_tweet_path(@tweet.id) do %>
