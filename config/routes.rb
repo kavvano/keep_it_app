@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     get "search", on: :collection
     get "search", on: :member
   end
+  resources :tags, only: :show
 end

@@ -230,7 +230,14 @@ div.tweet_list > p {
   margin: 0.25em 0;
 }
 
+.tag_link {
+  width: 20em;
+  z-index: 1;
+}
+
 .tag {
+  line-height: 1.25;
+  margin: 0.25em 0;
   text-align: end;
 }
 
