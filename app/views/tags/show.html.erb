@@ -1,8 +1,6 @@
 <div class="tweet_lists">
   <h2>#<%= @tag.name %></h2>
   <% @tag.tweets.reverse_each do |tweet| %>
-    <%= link_to tweet_path(tweet.id) do %>
-      <%= render partial: "tweets/tweet", locals: { tweet: tweet } %>
-    <% end %>
+    <%= render partial: "tweets/tweet", locals: { tweet: tweet } %>
   <% end %>
 </div>

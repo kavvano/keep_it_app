@@ -1,10 +1,14 @@
 <div class="tweet_list">
-  <div><p><b><%= tweet.user.nickname %></b></p><p class="creation_time"><%= l tweet.created_at %></p></div>
-  <p><%= tweet.text %></p>
+  <%= link_to tweet_path(tweet.id) do %>
+    <div><p><b><%= tweet.user.nickname %></b></p><p class="creation_time"><%= l tweet.created_at %></p></div>
+    <p class="tweet_text"><%= tweet.text %></p>
+  <% end %>
   <% tweet.tags.each do |tag| %>
-    <%= link_to tag_path(tag.id), class: "tag_link" do %>
-      <p class="tag">#<%= tag.name %></p>
-    <% end %>
+    <div class="tag_link">
+      <%= link_to tag_path(tag.id) do %>
+        <p class="tag">#<%= tag.name %></p>
+      <% end %>
+    </div>
   <% end %>
   <%= image_tag tweet.image.variant(resize: "400x400") if tweet.image.attached? %>
 </div>

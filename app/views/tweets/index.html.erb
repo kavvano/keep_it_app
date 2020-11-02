@@ -35,8 +35,6 @@
 <div class="tweet_lists">
   <h2>ホーム</h2>
   <% @tweets.each do |tweet| %>
-    <%= link_to tweet_path(tweet.id) do %>
-      <%= render partial: "tweet", locals: { tweet: tweet } %>
-    <% end %>
+    <%= render partial: "tweet", locals: { tweet: tweet } %>
   <% end %>
 </div>

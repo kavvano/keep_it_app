@@ -212,7 +212,7 @@ div.landing p {
   align-items: center;
 }
 
-div.tweet_list div {
+div.tweet_list div:first-child {
   line-height: 1.25;
   width: 20em;
   margin: 0.25em 0;
@@ -224,21 +224,21 @@ div.tweet_list div {
   font-size: 0.75em;
 }
 
-div.tweet_list > p {
+.tweet_text {
   line-height: 1.25;
   width: 20em;
-  margin: 0.25em 0;
+  padding-bottom: 0.25em;
 }
 
 .tag_link {
   width: 20em;
-  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .tag {
+  color: #0066ff;
   line-height: 1.25;
-  margin: 0.25em 0;
-  text-align: end;
 }
 
 div.tweet_list img {

@@ -1,15 +1,6 @@
 <div class="tweet_lists">
   <%= link_to root_path do %><h2>一覧へ戻る</h2><% end %>
-  <div class="tweet_list">
-    <div><p><b><%= @tweet.user.nickname %></b></p><p class="creation_time"><%= l @tweet.created_at, format: :short %></p></div>
-    <p><%= @tweet.text %></p>
-    <% @tweet.tags.each do |tag| %>
-      <%= link_to tag_path(tag.id), class: "tag_link" do %>
-        <p class="tag">#<%= tag.name %></p>
-      <% end %>
-    <% end %>
-    <%= image_tag @tweet.image.variant(resize: "400x400") if @tweet.image.attached? %>
-  </div>
+  <%= render partial: "tweet", locals: { tweet: @tweet } %>
   <div class="icons">
     <div class="keep_it_up_button">
       <%= render partial: "keep_it_ups/keep_it_up", locals: { tweet: @tweet }%>
