@@ -32,4 +32,6 @@ function tag() {
   });
 }
 
-window.addEventListener("load", tag);
+if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
+  window.addEventListener("load", tag);
+}
