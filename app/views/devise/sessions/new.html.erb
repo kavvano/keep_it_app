@@ -1,8 +1,8 @@
 <div class="form">
   <h2>Log in</h2>
 
-  <%= link_to "Facebookアカウントでログイン", user_facebook_omniauth_authorize_path, method: :post %><br>
-  <%= link_to "Googleアカウントでログイン", user_google_oauth2_omniauth_authorize_path, method: :post %>
+  <%# <%= link_to "Facebookアカウントでログイン", user_facebook_omniauth_authorize_path, method: :post %>
+  <%# <%= link_to "Googleアカウントでログイン", user_google_oauth2_omniauth_authorize_path, method: :post %>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <p class="notice"><%= notice %></p>
