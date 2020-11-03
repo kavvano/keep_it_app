@@ -55,8 +55,8 @@ Eメール：user2@test.com<br>パスワード：user0002
 
 # 機能説明
 
-<img width="1440" alt="スクリーンショット 2020-10-21 15 03 48" src="https://user-images.githubusercontent.com/70367011/96679469-aba6ba80-13ae-11eb-84e4-4478d2236361.png">
-積み上げを投稿できます。
+<img width="1552" alt="スクリーンショット 2020-11-03 12 53 50" src="https://user-images.githubusercontent.com/70367011/97948380-bceebe80-1dd3-11eb-8b62-e7e721ac2c3f.png">
+積み上げなどを投稿できます。
 
 # 実装予定の機能
 
