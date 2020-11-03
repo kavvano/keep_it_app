@@ -2,8 +2,12 @@
   <p><%= comment.message %></p>
   <div class="comment_user">
     <p><%= comment.user.nickname %></p>
-    <%= link_to tweet_comment_path(@tweet.id, comment.id), method: :delete do %>
-      <%= image_tag "garbage_can_gray.png", title: "削除" %>
+    <% if user_signed_in? && current_user.id == comment.user_id %>
+      <%= link_to tweet_comment_path(@tweet.id, comment.id), method: :delete do %>
+        <%= image_tag "garbage_can_gray.png", title: "削除" %>
+      <% end %>
+    <% else %>
+      <%= image_tag "garbage_can_lightgray.png" %>
     <% end %>
   </div>
 </div>

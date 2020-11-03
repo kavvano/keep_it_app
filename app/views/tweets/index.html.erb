@@ -1,5 +1,6 @@
 <% unless user_signed_in? %>
   <p class="landing_title"><span>"Keep it up!"&nbsp;その調子で頑張って！<br></span>と頑張るあなたの背中を押すアプリ</p>
+  <p style="text-align: center; margin: 2em 0 1em;"><span class="langing_text">こんな悩みはありませんか？</span></p>
   <div class="landing">
     <div>
       <%= image_tag "frustration.png" %>
@@ -14,21 +15,19 @@
       <p>ダイエット・食事制限がツライ</p>
     </div>
   </div>
-  <div style="text-align: center;">
-    <%= image_tag "arrow_black.png", class: "arrow" %>
-  </div>
+  <p style="text-align: center; margin: 2em 0 1em;"><span class="langing_text">Keep It Appを使えば...</span></p>
   <div class="landing">
     <div>
-      <%= image_tag "view_sns.png" %>
-      <p>みんなも頑張ってる</p>
+      <%= image_tag "sample_image1.png" %>
+      <p>みんな努力を自分の励みに</p>
     </div>
     <div>
-      <%= image_tag "muscular.png" %>
-      <p>効率を良くトレーニングしたい</p>
+      <%= image_tag "sample_image2.png" %>
+      <p>成果が出ている人に聞ける</p>
     </div>
     <div>
-      <%= image_tag "low_calorie_diet.png" %>
-      <p>ダイエット・食事制限がツライ</p>
+      <%= image_tag "sample_image3.png" %>
+      <p>Keep it up!をもらってやる気に</p>
     </div>
   </div>
 <% end %>

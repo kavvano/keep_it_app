@@ -159,7 +159,7 @@ div#error_explanation li {
   font-weight: bold;
   line-height: 1.5;
   text-align: center;
-  margin: 0.5em 0;
+  margin-top: 0.5em;
 }
 
 p.landing_title span {
@@ -183,12 +183,14 @@ div.landing img {
 }
 
 div.landing p {
-  font-weight: 500;
+  font-weight: bold;
   text-align: center;
 }
 
-.arrow {
-  height: 5em;
+.langing_text {
+  font-size: 1.5em;
+  font-weight: bold;
+  background: linear-gradient(transparent 75%, orange 90%);
 }
 
 .tweet_lists {
