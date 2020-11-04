@@ -1,4 +1,6 @@
 class KeepItUpsController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     KeepItUp.create(keep_it_up_params) unless KeepItUp.exists?(user_id: current_user.id, tweet_id: params[:tweet_id])
     @tweet = Tweet.find(params[:tweet_id])
