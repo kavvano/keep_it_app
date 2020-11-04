@@ -20,7 +20,11 @@ class TweetTagForm
 
   def update
     tweet = Tweet.find(id)
-    tweet.update(text: text, image: image, user_id: user_id)
+    if image.nil?
+      tweet.update(text: text, user_id: user_id)
+    else
+      tweet.update(text: text, image: image, user_id: user_id)
+    end
     if name.present?
       tag = Tag.where(name: name).first_or_initialize
       tag.save
