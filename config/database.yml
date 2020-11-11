@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: keep_it_app_production
-  username: keep_it_app
-  password: <%= ENV['KEEP_IT_APP_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
