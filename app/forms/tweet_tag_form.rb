@@ -7,7 +7,7 @@ class TweetTagForm
     validates :text, length: { maximum: 255 }
   end
 
-  validates :name, length: { maximum: 255 }
+  validates :name, length: { maximum: 63 }
 
   def save
     tweet = Tweet.create(text: text, image: image, user_id: user_id)
