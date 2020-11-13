@@ -8,7 +8,7 @@
       <div class="tag_form">
         <p>タグ：</p>
         <div>
-          <%= f.text_area :name, placeholder: "例：今日の積み上げ", class: "input_tag" %>
+          <%= f.text_area :name, placeholder: "例：今日の積み上げ（63文字まで）",maxlength: 63, class: "input_tag" %>
           <div class="tag_lists"></div>
         </div>
       </div>
