@@ -145,16 +145,6 @@ Eメール：user2@test.com<br>パスワード：user0002
 
 - has_many :tweets, through: :tweet_tags
 
-# ローカルでの動作方法
-
-`% git clone https://github.com/kavvano/keep_it_app.git
-% cd keep_it_app
-% bundle install
-% yarn install
-% rails db:create
-% rails db:migrate`
-git cloneしてから、ローカルで動作をさせるまでに必要なコマンドを記述しましょう。この時、アプリケーション開発に使用した環境を併記することを忘れないでください（パッケージやRubyのバージョンなど）。
-
 # 開発環境
 
 ### <u>言語・フレームワーク</u>
