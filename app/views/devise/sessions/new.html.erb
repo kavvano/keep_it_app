@@ -1,5 +1,53 @@
 <div class="form">
   <h2>Log in</h2>
+  <%# <input type="text" id="user1" value="user1@test.com" readonly>
+  <%= image_tag "copy_button.png", onclick: "cp1()" %>
+
+  <p>テストユーザー1</p>
+  <label>　 Eメール</label>
+  <input id="copy1" type="text" value="user1@test.com" readonly>
+  <button onclick="cp1()">コピー</button><br>
+  <script>
+  function cp1(){
+    var txt = document.getElementById("copy1");
+    txt.select();
+    document.execCommand("Copy");
+  }
+  </script>
+
+  <label>パスワード</label>
+  <input id="copy2" type="text" value="user0001" readonly>
+  <button onclick="cp2()">コピー</button>
+  <script>
+  function cp2(){
+    var txt = document.getElementById("copy2");
+    txt.select();
+    document.execCommand("Copy");
+  }
+  </script>
+
+  <p>テストユーザー2</p>
+  <label>　 Eメール</label>
+  <input id="copy3" type="text" value="user2@test.com" readonly>
+  <button onclick="cp3()">コピー</button><br>
+  <script>
+  function cp3(){
+    var txt = document.getElementById("copy3");
+    txt.select();
+    document.execCommand("Copy");
+  }
+  </script>
+
+  <label>パスワード</label>
+  <input id="copy4" type="text" value="user0002" readonly>
+  <button onclick="cp4()">コピー</button>
+  <script>
+  function cp4(){
+    var txt = document.getElementById("copy4");
+    txt.select();
+    document.execCommand("Copy");
+  }
+  </script>
 
   <%# <%= link_to "Facebookアカウントでログイン", user_facebook_omniauth_authorize_path, method: :post %>
   <%# <%= link_to "Googleアカウントでログイン", user_google_oauth2_omniauth_authorize_path, method: :post %>
