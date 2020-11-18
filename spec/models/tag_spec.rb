@@ -23,7 +23,7 @@ RSpec.describe Tag, type: :model do
         another_tag = FactoryBot.build(:tag)
         another_tag.name = @tag.name
         another_tag.valid?
-        expect(another_tag.errors.full_messages).to include("Nameはすでに存在します")
+        expect(another_tag.errors.full_messages).to include('Nameはすでに存在します')
       end
     end
   end

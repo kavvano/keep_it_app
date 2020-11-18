@@ -23,9 +23,7 @@ class TweetsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user)
-    if user_signed_in?
-      @keep_it_up = KeepItUp.find_by(user_id: current_user.id, tweet_id: params[:id])
-    end
+    @keep_it_up = KeepItUp.find_by(user_id: current_user.id, tweet_id: params[:id]) if user_signed_in?
   end
 
   def edit
