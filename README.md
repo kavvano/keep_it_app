@@ -198,3 +198,9 @@ Webサーバー：Nginx, アプリケーションサーバー：Unicorn
 ### <u>デプロイ</u>
 
 Capistrano
+
+# 現在学んでいること
+
+Docker（採用している企業が多いと認識しているため）<br>
+[Qiita](https://qiita.com/kawano30)でアウトプットとして記事を書いています。<br>
+[Twitter](https://twitter.com/kavvano1)で日々の積み上げも投稿しています。
