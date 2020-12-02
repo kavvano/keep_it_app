@@ -195,7 +195,7 @@ rspec-rails, factory_bot_rails, faker
 AWS（VPC, EC2, S3, CloudFront, Route53）<br>
 Webサーバー：Nginx, アプリケーションサーバー：Unicorn
 
-### <u>デプロイ</u>
+### <u>自動デプロイ</u>
 
 Capistrano
 
